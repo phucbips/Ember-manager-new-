@@ -19,12 +19,10 @@
       }
     ],
 
-    // === PHẦN SỬA ĐÂY ===
-    "baseUrl": ".", // <-- Thêm dòng này
+    "baseUrl": ".", 
     "paths": {
-      "@/*": ["./*"] // Dòng này của bạn là OK
+      "@/*": ["./app/*"] // <-- Đảm bảo bạn đã SỬA LẠI dòng này
     }
-    // === HẾT PHẦN SỬA ===
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
