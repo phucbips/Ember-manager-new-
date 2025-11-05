@@ -21,7 +21,7 @@
 
     "baseUrl": ".", 
     "paths": {
-      "@/*": ["./app/*"] // <-- Đảm bảo bạn đã SỬA LẠI dòng này
+      "@/*": ["./app/*"] // <-- SỬA DÒNG NÀY ĐỂ TRỎ VÀO "APP"
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
