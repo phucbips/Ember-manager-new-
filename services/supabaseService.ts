@@ -1,4 +1,4 @@
-import { supabase, ADMIN_EMAIL } from '../lib/supabase'
+import { supabase, ADMIN_EMAIL } from '@/lib/supabase'
 import type { Quiz, WhitelistEntry } from '../types'
 import { extractSrcAndTitle } from '../types'
 
