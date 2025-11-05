@@ -1,8 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useAuth } from '@/components/AuthProvider'
-import { GoogleAuthButton } from '@/components/GoogleAuthButton'
+import { useAuth } from '../components/AuthProvider'
+import { GoogleAuthButton } from '../components/GoogleAuthButton'
 import { useRouter, useSearchParams } from 'next/navigation'
 
 export default function LoginPage() {

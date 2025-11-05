@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs'
-import { UserService, AuthHelpers } from '../../../../services/userService'
+import { UserService, AuthHelpers } from '../../services/userService'
 
 interface RouteParams {
   params: {

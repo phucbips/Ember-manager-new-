@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import { supabase, authHelpers } from './lib/supabase'
-import { UserService, AuthHelpers } from './services/userService'
-import type { AuthUser, UserProfile, UserRoleType, LegacyUserRole } from './types'
-import type { AuthSession } from './lib/types'
+import { supabase, authHelpers } from '../lib/supabase'
+import { UserService, AuthHelpers } from '../services/userService'
+import type { AuthUser, UserProfile, UserRoleType, LegacyUserRole } from '../types'
+import type { AuthSession } from '../types'
 
 export const useAuth = () => {
   const [user, setUser] = useState<AuthUser | null>(null)

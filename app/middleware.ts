@@ -1,6 +1,5 @@
 import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs'
 import { NextResponse, type NextRequest } from 'next/server'
-import { UserService, AuthHelpers } from './services/userService'
 
 // Environment variables với validation
 const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL || 'thanhphucn06@gmail.com'
@@ -55,7 +54,7 @@ const ROUTES_CONFIG = {
 } as const
 
 // Type definitions
-import type { UserRoleType, UserStatusType } from './types'
+import type { UserRoleType, UserStatusType } from '../types'
 
 type UserContext = {
   id: string
@@ -146,6 +145,9 @@ export async function middleware(request: NextRequest) {
     }
 
     try {
+      // Import UserService dynamically để tránh circular imports
+      const { UserService } = await import('../services/userService')
+      
       // Lấy thông tin user từ database
       const userProfile = await UserService.getUserProfile(session.user.id)
       
@@ -283,44 +285,6 @@ export async function middleware(request: NextRequest) {
     
     return NextResponse.redirect(new URL('/sign-in', request.url))
   }
-}
-
-// Route protection test function
-export async function testRouteProtection(request: NextRequest) {
-  const testCases = [
-    {
-      path: '/dashboard',
-      expectedStatus: 401, // Should redirect to sign-in for unauthenticated
-      description: 'Protected route without auth'
-    },
-    {
-      path: '/admin',
-      expectedStatus: 401, // Should redirect to sign-in for unauthenticated
-      description: 'Admin route without auth'
-    },
-    {
-      path: '/api/quizzes',
-      expectedStatus: 401, // Should return 401 JSON response
-      description: 'API protected route without auth'
-    },
-    {
-      path: '/api/admin/users',
-      expectedStatus: 401, // Should return 401 JSON response
-      description: 'API admin route without auth'
-    },
-    {
-      path: '/sign-in',
-      expectedStatus: 200, // Should allow access
-      description: 'Public auth route'
-    },
-    {
-      path: '/',
-      expectedStatus: 200, // Should allow access
-      description: 'Home page'
-    }
-  ]
-
-  return testCases
 }
 
 // Enhanced middleware configuration

@@ -1,4 +1,4 @@
-import { UserButton } from './components/AuthButtons'
+import { UserButton } from '../components/AuthButtons'
 
 export default function NotAuthorizedPage() {
   return (
