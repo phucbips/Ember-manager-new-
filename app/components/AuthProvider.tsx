@@ -1,7 +1,7 @@
 'use client'
 
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react'
-import { supabase, ADMIN_EMAIL } from '../lib/supabase'
+import { supabase, ADMIN_EMAIL } from '@/lib/supabase'
 import type { Session } from '@supabase/supabase-js'
 import { type AuthUser } from '../types'
 

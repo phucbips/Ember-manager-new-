@@ -18,9 +18,13 @@
         "name": "next"
       }
     ],
+
+    // === PHẦN SỬA ĐÂY ===
+    "baseUrl": ".", // <-- Thêm dòng này
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"] // Dòng này của bạn là OK
     }
+    // === HẾT PHẦN SỬA ===
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

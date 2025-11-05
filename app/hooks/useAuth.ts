@@ -1,5 +1,5 @@
 import { useState, useEffect, useReducer, useCallback, useMemo, useRef } from 'react'
-import { supabase, authHelpers, ADMIN_EMAIL, adminCache } from '../lib/supabase'
+import { supabase, authHelpers, ADMIN_EMAIL, adminCache } from '@/lib/supabase'
 import type { UserRole, AuthUser } from '../types'
 import type { Session } from '@supabase/supabase-js'
 import { UserService } from '../services/userService'
